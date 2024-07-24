@@ -14,7 +14,7 @@ const Home = () => {
 
           <img
             className=" min-w-40 max-w-52 mt-5 "
-            src="/rocket.png"
+            src="./rocket.png"
             alt="imagen-cohete-roket"
           />
 
