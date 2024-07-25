@@ -11,7 +11,7 @@ const Rutas = () => {
             <Header/>
             <Routes>
                 <Route path="/" element={<Navigate to="/Home" />} />
-                <Route path="/Habit-Tracking" element={<Navigate to="/Home" />} />
+                <Route path="/Habit-Tracking/" element={<Navigate to="/Home" />} />
                 <Route path='/Home' element={<Home />} />
                 <Route path='/Formulario' element={<Formulario />} />
                 <Route path='/ListaHabitos' element={<ListaHabitos />} />
