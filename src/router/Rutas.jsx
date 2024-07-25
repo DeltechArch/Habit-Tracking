@@ -15,7 +15,7 @@ const Rutas = () => {
                 <Route path='/Habit-Tracking/Home' element={<Home />} />
                 <Route path='/Habit-Tracking/Formulario' element={<Formulario />} />
                 <Route path='/Habit-Tracking/ListaHabitos' element={<ListaHabitos />} />
-                <Route path='*' element={<h1>Error 404</h1>} />
+                <Route path="*" element={<Navigate to="/Habit-Tracking/Home" />} />
 
             </Routes>
 
