@@ -13,8 +13,8 @@ const Home = () => {
           </h1>
 
           <img
-            className=" min-w-40 max-w-52 mt-5 "
-            src="./rocket.png"
+            className='min-w-40 max-w-52 mt-5'
+            src="./rocket.svg"
             alt="imagen-cohete-roket"
           />
 
