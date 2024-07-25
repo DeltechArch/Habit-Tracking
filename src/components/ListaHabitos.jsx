@@ -103,7 +103,7 @@ const ListaHabitos = () => {
             <div className=" bg-slate-900 p-2 rounded-xl shadow-slate-600 shadow-xl">
 
               <li className=" text-3xl text-purple-700 ">No tienes hábitos guardados  </li>
-              <Link to="/Formulario" className=" text-4xl   text-cyan-400  rounded-lg p-2 mt-2">Empieza a crear</Link>
+              <Link to="/Habit-Tracking/Formulario" className=" text-4xl   text-cyan-400  rounded-lg p-2 mt-2">Empieza a crear</Link>
             </div>
 
           </>

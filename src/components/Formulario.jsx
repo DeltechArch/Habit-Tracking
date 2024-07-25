@@ -52,7 +52,7 @@ const Formulario = () => {
 
     // Redirige a la página de lista de hábitos después de un breve retraso
     setTimeout(() => {
-      navigate('/ListaHabitos');
+      navigate('/Habit-Tracking/ListaHabitos');
     }, 100);
 
   };
