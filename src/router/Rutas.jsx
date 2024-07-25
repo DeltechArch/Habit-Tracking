@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, NavLink, BrowserRouter } from 'react-router-dom'
+import { Routes, Route, NavLink, BrowserRouter, Navigate } from 'react-router-dom'
 import Home from '../components/Home'
 import Formulario from '../components/Formulario'
 import ListaHabitos from '../components/ListaHabitos'
@@ -10,7 +10,8 @@ const Rutas = () => {
         <BrowserRouter>
             <Header/>
             <Routes>
-                <Route path='/' element={<Home />} />
+                <Route path="/" element={<Navigate to="/Home" />} />
+                <Route path="/Habit-Tracking" element={<Navigate to="/Home" />} />
                 <Route path='/Home' element={<Home />} />
                 <Route path='/Formulario' element={<Formulario />} />
                 <Route path='/ListaHabitos' element={<ListaHabitos />} />

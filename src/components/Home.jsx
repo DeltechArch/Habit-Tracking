@@ -1,4 +1,4 @@
-
+import cohete from "../assets/rocket.png"
 
 const Home = () => {
 
@@ -11,12 +11,14 @@ const Home = () => {
           <h1 className="text-5xl text-center">
             Empieza a crear habitos
           </h1>
-
-          <img
-            className='min-w-40 max-w-52 mt-5'
-            src="./rocket.svg"
-            alt="imagen-cohete-roket"
-          />
+          <span>
+            <img
+            className=' min-w-40 min-h-40 mt-5'
+            src={cohete}
+            alt="imagen-cohete"
+          />  
+          </span>
+        
 
         </div>
 
