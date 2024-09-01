@@ -55,62 +55,64 @@ const ListaHabitos = () => {
 
 
   return (
-    <div className='  flex flex-col  text-center mb-28 mt-24'>
-      <ul className='space-y-2 w-60 mx-auto'>
+    <div className='flex flex-col text-center mb-28 mt-48'>
+      <ul className='space-y-6 w-80 mx-auto'>
+        {habitosGuardados.length > 0 ? (
+          habitosGuardados.map((habito, index) => (
+            <li
+              key={habito.id}
+              className="bg-slate-800 shadow-lg shadow-slate-700 rounded-xl flex flex-col items-center p-6 space-y-4 transition-transform transform hover:scale-105 hover:shadow-2xl hover:border-cyan-500 border border-transparent"
+            >
+              <p className="bg-cyan-500 text-black text-lg px-4 py-1 rounded-full border border-cyan-300">
+                Nº {index + 1}
+              </p>
 
-        {habitosGuardados.length > 0 ? (habitosGuardados.map((habito, index) => (
-          <li
-            key={habito.id}
-            className="  bg-slate-900 shadow-slate-600 shadow-xl rounded-xl flex justify-between items-center flex-col h-80 px-3"
-          >
-            <p className=" bg-black text-cyan-400 text-xl w-1/3 border border-cyan-400 mt-2">Nº {index + 1}</p>
+              <p className="text-xl uppercase text-purple-400 font-semibold border-b-2 border-cyan-400 pb-2">
+                {habito.habito}
+              </p>
+
+              <div className="flex flex-col items-center space-y-4">
+                <div className={`flex flex-col items-center justify-center p-6 rounded-full w-40 h-40 ${habito.contador >= 30 ? 'bg-cyan-500' : 'bg-gray-800'} transition-colors duration-300 border-4 ${habito.contador >= 30 ? 'border-cyan-600' : 'border-gray-600'}`}>
+                  <p className={`text-6xl font-bold ${habito.contador >= 30 ? 'text-black' : 'text-cyan-400'} transition-colors duration-300`}>
+                    {habito.contador}
+                  </p>
+                  <p className={`text-base ${habito.contador >= 30 ? 'text-black' : 'text-cyan-400'} transition-colors duration-300`}>
+                    días completados
+                  </p>
+                </div>
 
 
-            <p className=" text-2xl uppercase text-purple-700 font-black border-b-8 border-cyan-400"> {habito.habito}</p>
+                <div className="flex space-x-3">
+                  <button
+                    onClick={() => incrementarContador(habito.id)}
+                    className="bg-cyan-500 text-white w-24 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-cyan-400 shadow-md hover:shadow-lg"
+                  >
+                    Agregar
+                  </button>
 
-
-            <div className=" flex flex-col items-center ">
-              <div className={`flex flex-col items-center justify-center p-4 rounded-full w-40 h-40 ${habito.contador >= 30 ? 'bg-cyan-400' : 'bg-black'}`}>
-                <p className={`text-7xl ${habito.contador >= 30 ? 'text-black' : 'text-cyan-400'}`}>{habito.contador}  </p>
-                <p className={`${habito.contador >= 30 ? 'text-black' : 'text-cyan-400'}`}>dias completados</p>
-
+                  <button
+                    onClick={() => eliminarHabito(habito.id)}
+                    className="bg-red-600 text-white w-24 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-red-500 shadow-md hover:shadow-lg"
+                  >
+                    Eliminar
+                  </button>
+                </div>
               </div>
-
-              <div className=" flex">
-                <button
-                  onClick={() => incrementarContador(habito.id)}//le pasamos el id a la funcion
-                  className="bg-cyan-400 w-full p-2 m-4"
-                >
-                  agregar
-                </button>
-
-                <button
-                  onClick={() => eliminarHabito(habito.id)}//le pasamos el id a la funcion
-                  className=" bg-red-700 p-2 w-full m-4"
-                >
-                  Eliminar
-                </button>
-              </div>
-            </div>
-
-
-
-          </li>
-
-        ))
+            </li>
+          ))
         ) : (
-          <>
-            <div className=" bg-slate-900 p-2 rounded-xl shadow-slate-600 shadow-xl">
-
-              <li className=" text-3xl text-purple-700 ">No tienes hábitos guardados  </li>
-              <Link to="/Habit-Tracking/Formulario" className=" text-4xl   text-cyan-400  rounded-lg p-2 mt-2">Empieza a crear</Link>
-            </div>
-
-          </>
-
+          <div className="bg-slate-800 p-4 rounded-xl shadow-lg shadow-slate-700 border border-transparent transition-transform transform hover:scale-105 hover:border-cyan-500">
+            <p className="text-2xl text-purple-400 mb-2">No tienes hábitos guardados</p>
+            <Link to="/Habit-Tracking/Formulario" className="text-3xl text-cyan-400 rounded-lg p-2 mt-2 inline-block bg-slate-700 hover:bg-slate-600 transition-colors duration-300">
+              Empieza a crear
+            </Link>
+          </div>
         )}
       </ul>
     </div>
+
+
+
   );
 };
 

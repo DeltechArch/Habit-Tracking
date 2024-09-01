@@ -8,7 +8,7 @@ import { Header } from '../components/Header'
 const Rutas = () => {
     return (
         <BrowserRouter>
-            <Header/>
+            <Header />
             <Routes>
                 <Route path="/" element={<Navigate to="/Habit-Tracking/Home" />} />
                 <Route path="/Habit-Tracking/" element={<Navigate to="/Habit-Tracking/Home" />} />
@@ -19,33 +19,36 @@ const Rutas = () => {
 
             </Routes>
 
-            <nav className=' fixed bottom-0 w-full flex justify-center'>
-                <ul className='w-72 border-4 border-cyan-400'>
-                    <li className='flex flex-row justify-around bg-slate-900'>
+            <nav className='fixed bottom-0 w-full flex justify-center z-50'>
+                <ul className='w-full max-w-4xl bg-slate-900 border-t-4 border-cyan-400 shadow-lg rounded-t-xl flex items-center'>
+                    <li className='flex flex-row w-full justify-around p-2'>
                         <NavLink
-                            className={({ isActive }) => isActive ? 'bg-cyan-400' : ''}
-                            to='/Habit-Tracking/Home' >
-                            <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" /></svg>
+                            className={({ isActive }) =>
+                                `flex flex-col items-center p-2 transition-transform duration-300 transform ${isActive ? 'bg-cyan-400 text-white shadow-md' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
+                            to='/Habit-Tracking/Home'>
+                            <img src="./home.svg" alt="Inicio" style={{ width: '50px', height: '50px' }} />
+                            <span className='text-xs mt-1'>Inicio</span>
                         </NavLink>
 
                         <NavLink
-                            className={({ isActive }) => isActive ? 'bg-cyan-400' : ''}
+                            className={({ isActive }) =>
+                                `flex flex-col items-center p-2 transition-transform duration-300 transform ${isActive ? 'bg-cyan-400 text-white shadow-md' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
                             to='/Habit-Tracking/Formulario'>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#e8eaed"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" /></svg>
+                            <img src="./add.svg" alt="Agregar Hábito" style={{ width: '50px', height: '50px' }} />
+                            <span className='text-xs mt-1'>Agregar</span>
                         </NavLink>
 
                         <NavLink
-                            className={({ isActive }) => isActive ? 'bg-cyan-400' : ''}
+                            className={({ isActive }) =>
+                                `flex flex-col items-center p-2 transition-transform duration-300 transform ${isActive ? 'bg-cyan-400 text-white shadow-md' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
                             to='/Habit-Tracking/ListaHabitos'>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#e8eaed"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" /></svg>
+                            <img src="./search.svg" alt="Buscar Hábitos" style={{ width: '50px', height: '50px' }} />
+                            <span className='text-xs mt-1'>Buscar</span>
                         </NavLink>
-                        
-
-
                     </li>
-
                 </ul>
             </nav>
+
 
 
         </BrowserRouter>

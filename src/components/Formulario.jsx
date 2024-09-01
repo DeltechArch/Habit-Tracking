@@ -60,34 +60,33 @@ const Formulario = () => {
 
 
   return (
-    <div className='mt-24'>
-      <h1 className='text-center text-5xl m-2'>Un hábito se forma en solo 30 días</h1>
+    <div className='mt-48'>
+      <h1 className='text-center text-5xl m-2 text-cyan-500 font-bold'>Forma un hábito en solo 30 días</h1>
 
       <form
         onSubmit={handleSubmit}
-        className='grid grid-cols-1 space-y-3 justify-items-center bg-slate-900 shadow-slate-600 shadow-xl mt-16 p-4 h-auto w-72 mx-auto rounded-lg'
+        className='flex flex-col items-center bg-gray-800 shadow-2xl shadow-gray-700 mt-16 p-8 h-auto w-96 mx-auto rounded-2xl transform transition-all duration-500 hover:scale-105'
       >
-        <label className='text-4xl text-center text-purple-700' htmlFor="habito">¿Qué hábito quieres crear?</label>
+        <label className='text-3xl text-center text-cyan-400 mb-4' htmlFor="habito">¿Qué hábito deseas crear?</label>
         <input
           ref={nombreHabitos}
-          className='rounded-lg p-2'
+          className='rounded-full p-4 w-full text-lg text-gray-900 focus:ring-4 focus:ring-cyan-400 outline-none transition-all duration-300'
           type="text"
           id="habito"
           name="habito"
-          placeholder='Ejemplo: leer'
-          maxLength={12}
+          placeholder='Ejemplo: Meditar'
+          maxLength={18}
         />
         <button
-          className=' bg-cyan-400 text-center rounded-lg'
+          className='bg-cyan-500 text-center text-white font-semibold rounded-full mt-6 px-8 py-4 transition-all duration-300 hover:bg-cyan-400'
           type="submit"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" height="120px" viewBox="0 -960 960 960" width="120px" fill="#e8eaed">
-            <path d="M840-680v480q0 33-23.5 56.5T760-120H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h480l160 160Zm-80 34L646-760H200v560h560v-446ZM480-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM240-560h360v-160H240v160Zm-40-86v446-560 114Z" />
-          </svg>
+          Crear Hábito
         </button>
       </form>
-
     </div>
+
+
   );
 };
 
