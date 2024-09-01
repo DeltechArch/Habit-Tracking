@@ -19,34 +19,35 @@ const Rutas = () => {
             </Routes>
 
             <nav className='fixed bottom-0 w-full flex justify-center'>
-                <ul className='w-full max-w-4xl bg-slate-900 border-t-4 border-cyan-400 shadow-lg rounded-t-xl flex items-center'>
+                <ul className='w-full max-w-md bg-slate-900 border-t-4 border-cyan-400 shadow-lg rounded-t-xl flex items-center'>
                     <li className='flex flex-row w-full justify-around p-2'>
                         <NavLink
-                            className={({ isActive }) => 
+                            className={({ isActive }) =>
                                 `flex flex-col items-center p-2 transition-transform duration-300 transform ${isActive ? 'bg-cyan-400 text-white shadow-md' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
                             to='/Habit-Tracking/Home'>
-                            <img src="./home.svg" alt="Inicio" style={{ width: '50px', height: '50px' }} />
-                            <span className='text-xs mt-1'>Inicio</span>
+                            <img src="./home.svg" alt="Inicio" className='w-8 h-8 sm:w-12 sm:h-12' />
+                            <span className='text-xs sm:text-sm mt-1'>Inicio</span>
                         </NavLink>
 
                         <NavLink
-                            className={({ isActive }) => 
+                            className={({ isActive }) =>
                                 `flex flex-col items-center p-2 transition-transform duration-300 transform ${isActive ? 'bg-cyan-400 text-white shadow-md' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
                             to='/Habit-Tracking/Formulario'>
-                            <img src="./add.svg" alt="Agregar Hábito" style={{ width: '50px', height: '50px' }} />
-                            <span className='text-xs mt-1'>Agregar</span>
+                            <img src="./add.svg" alt="Agregar Hábito" className='w-8 h-8 sm:w-12 sm:h-12' />
+                            <span className='text-xs sm:text-sm mt-1'>Agregar</span>
                         </NavLink>
 
                         <NavLink
-                            className={({ isActive }) => 
+                            className={({ isActive }) =>
                                 `flex flex-col items-center p-2 transition-transform duration-300 transform ${isActive ? 'bg-cyan-400 text-white shadow-md' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
                             to='/Habit-Tracking/ListaHabitos'>
-                            <img src="./search.svg" alt="Buscar Hábitos" style={{ width: '50px', height: '50px' }} />
-                            <span className='text-xs mt-1'>Buscar</span>
+                            <img src="./search.svg" alt="Buscar Hábitos" className='w-8 h-8 sm:w-12 sm:h-12' />
+                            <span className='text-xs sm:text-sm mt-1'>Buscar</span>
                         </NavLink>
                     </li>
                 </ul>
             </nav>
+
         </HashRouter>
     );
 }

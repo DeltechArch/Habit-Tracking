@@ -55,62 +55,61 @@ const ListaHabitos = () => {
 
 
   return (
-    <div className='flex flex-col text-center mb-28 mt-48'>
-      <ul className='space-y-6 w-80 mx-auto'>
-        {habitosGuardados.length > 0 ? (
-          habitosGuardados.map((habito, index) => (
-            <li
-              key={habito.id}
-              className="bg-slate-800 shadow-lg shadow-slate-700 rounded-xl flex flex-col items-center p-6 space-y-4 transition-transform transform hover:scale-105 hover:shadow-2xl hover:border-cyan-500 border border-transparent"
-            >
-              <p className="bg-cyan-500 text-black text-lg px-4 py-1 rounded-full border border-cyan-300">
-                Nº {index + 1}
-              </p>
-
-              <p className="text-xl uppercase text-purple-400 font-semibold border-b-2 border-cyan-400 pb-2">
-                {habito.habito}
-              </p>
-
-              <div className="flex flex-col items-center space-y-4">
-                <div className={`flex flex-col items-center justify-center p-6 rounded-full w-40 h-40 ${habito.contador >= 30 ? 'bg-cyan-500' : 'bg-gray-800'} transition-colors duration-300 border-4 ${habito.contador >= 30 ? 'border-cyan-600' : 'border-gray-600'}`}>
-                  <p className={`text-6xl font-bold ${habito.contador >= 30 ? 'text-black' : 'text-cyan-400'} transition-colors duration-300`}>
-                    {habito.contador}
-                  </p>
-                  <p className={`text-base ${habito.contador >= 30 ? 'text-black' : 'text-cyan-400'} transition-colors duration-300`}>
-                    días completados
-                  </p>
-                </div>
-
-
-                <div className="flex space-x-3">
-                  <button
-                    onClick={() => incrementarContador(habito.id)}
-                    className="bg-cyan-500 text-white w-24 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-cyan-400 shadow-md hover:shadow-lg"
-                  >
-                    Agregar
-                  </button>
-
-                  <button
-                    onClick={() => eliminarHabito(habito.id)}
-                    className="bg-red-600 text-white w-24 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-red-500 shadow-md hover:shadow-lg"
-                  >
-                    Eliminar
-                  </button>
-                </div>
+    <div className='flex flex-col text-center mb-16 mt-48 px-4'>
+    <ul className='space-y-6 w-full max-w-md mx-auto'>
+      {habitosGuardados.length > 0 ? (
+        habitosGuardados.map((habito, index) => (
+          <li
+            key={habito.id}
+            className="bg-slate-800 shadow-lg shadow-slate-700 rounded-xl flex flex-col items-center p-4 sm:p-6 space-y-4 transition-transform transform hover:scale-105 hover:shadow-2xl hover:border-cyan-500 border border-transparent"
+          >
+            <p className="bg-cyan-500 text-black text-base sm:text-lg px-3 sm:px-4 py-1 rounded-full border border-cyan-300">
+              Nº {index + 1}
+            </p>
+  
+            <p className="text-lg sm:text-xl uppercase text-purple-400 font-semibold border-b-2 border-cyan-400 pb-2">
+              {habito.habito}
+            </p>
+  
+            <div className="flex flex-col items-center space-y-4">
+              <div className={`flex flex-col items-center justify-center p-4 sm:p-6 rounded-full w-32 sm:w-40 h-32 sm:h-40 ${habito.contador >= 30 ? 'bg-cyan-500' : 'bg-gray-800'} transition-colors duration-300 border-4 ${habito.contador >= 30 ? 'border-cyan-600' : 'border-gray-600'}`}>
+                <p className={`text-4xl sm:text-6xl font-bold ${habito.contador >= 30 ? 'text-black' : 'text-cyan-400'} transition-colors duration-300`}>
+                  {habito.contador}
+                </p>
+                <p className={`text-sm sm:text-base ${habito.contador >= 30 ? 'text-black' : 'text-cyan-400'} transition-colors duration-300`}>
+                  días completados
+                </p>
               </div>
-            </li>
-          ))
-        ) : (
-          <div className="bg-slate-800 p-4 rounded-xl shadow-lg shadow-slate-700 border border-transparent transition-transform transform hover:scale-105 hover:border-cyan-500">
-            <p className="text-2xl text-purple-400 mb-2">No tienes hábitos guardados</p>
-            <Link to="/Habit-Tracking/Formulario" className="text-3xl text-cyan-400 rounded-lg p-2 mt-2 inline-block bg-slate-700 hover:bg-slate-600 transition-colors duration-300">
-              Empieza a crear
-            </Link>
-          </div>
-        )}
-      </ul>
-    </div>
-
+  
+              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+                <button
+                  onClick={() => incrementarContador(habito.id)}
+                  className="bg-cyan-500 text-white w-24 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-cyan-400 shadow-md hover:shadow-lg"
+                >
+                  Agregar
+                </button>
+  
+                <button
+                  onClick={() => eliminarHabito(habito.id)}
+                  className="bg-red-600 text-white w-24 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-red-500 shadow-md hover:shadow-lg"
+                >
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </li>
+        ))
+      ) : (
+        <div className="bg-slate-800 p-4 rounded-xl shadow-lg shadow-slate-700 border border-transparent transition-transform transform hover:scale-105 hover:border-cyan-500">
+          <p className="text-xl sm:text-2xl text-purple-400 mb-2">No tienes hábitos guardados</p>
+          <Link to="/Habit-Tracking/Formulario" className="text-2xl sm:text-3xl text-cyan-400 rounded-lg p-2 mt-2 inline-block bg-slate-700 hover:bg-slate-600 transition-colors duration-300">
+            Empieza a crear
+          </Link>
+        </div>
+      )}
+    </ul>
+  </div>
+  
 
 
   );
