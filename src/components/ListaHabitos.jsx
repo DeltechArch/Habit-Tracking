@@ -34,7 +34,7 @@ const ListaHabitos = () => {
   };
 
   return (
-    <div className='flex flex-col  text-center mb-16 mt-48 px-4'>
+    <div className='flex flex-col  text-center mb-20 mt-48 px-4'>
       <ul className='space-y-6 w-full max-w-md mx-auto'>
         {habitosGuardados.length > 0 ? (
           habitosGuardados.map((habito, index) => (

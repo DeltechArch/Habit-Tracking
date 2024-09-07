@@ -25,24 +25,24 @@ const Rutas = () => {
                             className={({ isActive }) =>
                                 `flex flex-col items-center p-2 transition-transform duration-300 transform ${isActive ? 'bg-cyan-400 text-white shadow-md' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
                             to='/Habit-Tracking/Home'>
-                            <img src="./home.svg" alt="Inicio" className='w-8 h-8 sm:w-12 sm:h-12' />
-                            <span className='text-xs sm:text-sm mt-1'>Inicio</span>
+                            <img src="./home.svg" alt="Inicio" style={{width:'30px'}} />
+                            
                         </NavLink>
 
                         <NavLink
                             className={({ isActive }) =>
                                 `flex flex-col items-center p-2 transition-transform duration-300 transform ${isActive ? 'bg-cyan-400 text-white shadow-md' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
                             to='/Habit-Tracking/Formulario'>
-                            <img src="./add.svg" alt="Agregar Hábito" className='w-8 h-8 sm:w-12 sm:h-12' />
-                            <span className='text-xs sm:text-sm mt-1'>Agregar</span>
+                            <img src="./add.svg" alt="Agregar Hábito" style={{width:'30px'}} />
+                            
                         </NavLink>
 
                         <NavLink
                             className={({ isActive }) =>
                                 `flex flex-col items-center p-2 transition-transform duration-300 transform ${isActive ? 'bg-cyan-400 text-white shadow-md' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
                             to='/Habit-Tracking/ListaHabitos'>
-                            <img src="./search.svg" alt="Buscar Hábitos" className='w-8 h-8 sm:w-12 sm:h-12' />
-                            <span className='text-xs sm:text-sm mt-1'>Buscar</span>
+                            <img src="./search.svg" alt="Buscar Hábitos" style={{width:'30px'}} />
+                            
                         </NavLink>
                     </li>
                 </ul>
