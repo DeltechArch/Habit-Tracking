@@ -78,8 +78,8 @@ const Formulario = () => {
         type="text"
         id="habito"
         name="habito"
-        placeholder='Ejemplo: Meditar'
-        maxLength={18}
+        placeholder=' max(25 carateres)'
+        maxLength={25}
       />
       <button
         className='bg-cyan-500 text-center text-white font-semibold rounded-full mt-6 px-6 py-3 transition-all duration-300 hover:bg-cyan-400'
