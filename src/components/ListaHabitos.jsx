@@ -34,18 +34,18 @@ const ListaHabitos = () => {
   };
 
   return (
-    <div className='flex flex-col  text-center mb-20 mt-48 px-4'>
+    <div className='flex flex-col  text-center mb-20 mt-48 px-4 '>
       <ul className='space-y-6 w-full max-w-md mx-auto'>
         {habitosGuardados.length > 0 ? (
           habitosGuardados.map((habito, index) => (
             <li
               key={habito.id}
-              className="bg-slate-800 shadow-lg shadow-slate-700 rounded-xl border border-transparent"
+              className="bg-black shadow-inner shadow-white rounded-md "
             >
               <div className='grid grid-cols-1 gap-4 p-1 '>
 
                 <div className='flex flex-col items-center justify-center'>
-                  <p className="bg-cyan-500 text-black text-sm sm:text-lg px-3 sm:px-4 py-1 rounded-full border border-cyan-300">
+                  <p className="bg-cyan-500 text-black text-sm sm:text-lg px-3 sm:px-4 py-1 rounded-lg border border-cyan-300">
                     Nº {index + 1}
                   </p>
                   <p className="text-sm uppercase text-purple-400 font-semibold border-b-2 border-cyan-400 pb-2">
@@ -56,7 +56,7 @@ const ListaHabitos = () => {
 
                 <div className="grid grid-cols-2">
 
-                  <div className='flex items-center justify-center'>
+                  <div className='flex items-center justify-center '>
                     <div className={`flex flex-col items-center justify-center p-4 rounded-full w-20 h-20 ${habito.contador >= 30 ? 'bg-cyan-500' : 'bg-gray-800'} transition-colors duration-300 border-4 ${habito.contador >= 30 ? 'border-cyan-600' : 'border-gray-600'}`}>
                       <p className={`text-4xl font-bold ${habito.contador >= 30 ? 'text-black' : 'text-cyan-400'} transition-colors duration-300`}>
                         {habito.contador}
